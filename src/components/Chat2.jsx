@@ -1,6 +1,6 @@
 
 
-const Chat = () => {
+const Chat2 = () => {
     return (
         <div className='flex flex-col bg-base-300 rounded-3xl p-4 w-[350px] h-[650px] gap-10'>
             <>
@@ -10,10 +10,8 @@ const Chat = () => {
                 </div>
 
                 <div className="chat-bubble">
-                    Your comments about me are funny because I am trying to explain my
-                    point by using humor. That said, I think you should try to
-                    understand why people find these things amusing rather than
-                    dismissing them out of hand.
+                My favorite food is probably pizza. It has been my favorite since I
+                was little.
                 </div>
                 <div className="chat-footer opacity-50">Delivered</div>
                 </div>
@@ -24,9 +22,11 @@ const Chat = () => {
                 </div>
 
                 <div className="chat-bubble">
-                    Your comment has been removed due to spam. Please use the search
-                    function at the top right corner of this page if you want to find
-                    what you were looking for again.
+                I think it would be cool if we could have some sort of toast school for people that want
+                to learn how to make their own bread. I know there is one place where they teach you how to bake 
+                bread but its really expensive. It might be nice to have something more affordable so everyone has
+                access to it.<br /><br />
+                -- The only thing necessary for evil to triumph is for good men to do nothing. - Edmund Burke
                 </div>
                 <div className="chat-footer opacity-50">Seen at 12:46</div>
             </div>
@@ -35,4 +35,4 @@ const Chat = () => {
     );
 };
 
-export default Chat;
+export default Chat2;

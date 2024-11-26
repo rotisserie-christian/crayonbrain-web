@@ -4,6 +4,7 @@ import { StarsBackground } from './ui/StarsBackground';
 import Chat from './Chat';
 import Graph from './graph/Graph';
 import { FaAngleDoubleRight, FaAngleDoubleUp } from 'react-icons/fa';
+import Chat2 from './Chat2';
 
 const HeroAbout = () => {
     const [readMore, setReadMore] = useState(false);
@@ -48,7 +49,7 @@ const HeroAbout = () => {
         </div>
 
         <div 
-        className="flex flex-col w-full bg-base-200 scroll-mt-20"
+        className="flex flex-col w-full bg-base-200"
         id='about'
         ref={aboutRef}
         >
@@ -107,17 +108,22 @@ const HeroAbout = () => {
                     </div>
                 </div>
             </div>
+            
+            <div className='flex flex-col items-center justify-center'>
+                <h1 className='text-4xl lg:text-6xl text-center font-bold mt-20 lg:mt-32 gradient-text'>Goofiness Gradient</h1>
 
-            <div className='flex flex-col lg:flex-row gap-10 lg:gap-20 items-center justify-center mt-40 mb-40'>
-                <div className='flex flex-col items-center lg:items-end justify-center text-center lg:text-right w-[370px] lg:w-[400px]'>
-                    <h1 className='text-3xl lg:text-4xl lg:text-right font-bold'>Goofiness Gradient</h1>
-                    
-                    <p className='text-lg lg:text-xl ubuntu-regular mt-5'>
-                        They frequently argue with each other, often times in creatively passive aggressive ways
-                    </p>
-                </div>
-                <div className='lg:w-[450px]'>
-                    <Chat />
+                <p className='text-lg lg:text-2xl text-center ubuntu-regular mt-5 w-[350px] lg:w-[600px]'
+                >
+                They sometimes build on each other&apos;s bizarre ideas and frequently argue, often times in creatively passive aggressive ways
+                </p>
+                
+                <div className='flex flex-col lg:flex-row gap-10 lg:gap-40 items-center justify-center mt-10 lg:mt-20 mb-40'>
+                    <div> 
+                        <Chat2 />          
+                    </div>
+                    <div> 
+                        <Chat />
+                    </div>
                 </div>
             </div>
         </div>

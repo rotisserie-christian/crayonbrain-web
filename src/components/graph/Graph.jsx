@@ -15,7 +15,7 @@ const initialNodes = [
     {
         id: 'Crayon',
         position: { x: 0, y: 50 },
-        data: { label: 'Crayon' },
+        data: { label: 'Homer' },
         draggable: false,
         className: 'darkNodeStyle'
     },
@@ -43,7 +43,7 @@ const initialNodes = [
     {
         id: 'Crayon2',
         position: { x: 0, y: 350 },
-        data: { label: 'Crayon' },
+        data: { label: 'Homer' },
         draggable: false,
         className: 'darkNodeStyle'
     },
