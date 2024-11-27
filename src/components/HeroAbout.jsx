@@ -53,7 +53,7 @@ const HeroAbout = () => {
         id='about'
         ref={aboutRef}
         >
-            <div className='flex flex-col items-center justify-center mt-40'>
+            <div className='flex flex-col items-center justify-center mt-10'>
                 <div 
                 className='flex flex-col lg:flex-row items-start gap-5 lg:gap-20 justify-center p-6'>
                     <div className='flex flex-col items-center lg:items-end justify-start w-[370px] lg:w-[400px]'>
