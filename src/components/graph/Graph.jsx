@@ -23,42 +23,42 @@ const initialNodes = [
     },
     {
         id: 'Crayon',
-        position: { x: 130, y: 50 },
+        position: { x: 140, y: 50 },
         data: { label: 'Crayon' },
         draggable: false,
         className: 'darkNodeStyle'
     },
     {
         id: 'Memory',
-        position: { x: 260, y: 200 },
+        position: { x: 270, y: 200 },
         data: { label: 'Memory' },
         draggable: false,
         type: 'memoryNode'
     },
     {
         id: 'Distill',
-        position: { x: 130, y: 200 },
+        position: { x: 140, y: 200 },
         data: { label: 'Distill' },
         draggable: false,
         type: 'distillNode'
     },
     {
         id: 'Pruning',
-        position: { x: 260, y: 350 },
+        position: { x: 270, y: 350 },
         data: { label: 'Pruning' },
         draggable: false,
         type: 'pruningNode'
     },
     {
         id: 'Crayon2',
-        position: { x: 130, y: 350 },
+        position: { x: 140, y: 350 },
         data: { label: 'Crayon' },
         draggable: false,
         className: 'darkNodeStyle'
     },
     {
         id: 'Brain',
-        position: { x: 260, y: 50 },
+        position: { x: 270, y: 50 },
         data: { label: 'Brain' },
         draggable: false,
         type: 'brainNode',
