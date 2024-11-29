@@ -8,9 +8,9 @@ const PruningNode = ({ data }) => {
             <div>{data.label}</div>
             <Handle
                 type="target"
-                position="left"
-                className="handle handle-left"
-                id="left"
+                position="top"
+                className="handle handle-top"
+                id="top"
             />
         </div>
     );

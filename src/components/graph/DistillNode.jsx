@@ -6,6 +6,12 @@ const DistillNode = ({ data }) => {
     return (
         <div className="darkNodeStyle">
             <Handle
+                type="target"
+                position="left"
+                className="handle handle-left"
+                id="left"
+            />
+            <Handle
                 type="source"
                 position="right"
                 className="handle handle-right"

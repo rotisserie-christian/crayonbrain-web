@@ -1,10 +1,9 @@
 import { useRef, useState } from 'react';
 import { ShootingStars } from './ui/ShootingStars';
 import { StarsBackground } from './ui/StarsBackground';
-import Chat from './Chat';
 import Graph from './graph/Graph';
-import { FaAngleDoubleRight, FaAngleDoubleUp } from 'react-icons/fa';
-import Chat2 from './Chat2';
+import { FaAngleDoubleRight, FaAngleDoubleUp, FaAngleRight, FaPencilAlt } from 'react-icons/fa';
+import { GiBrain, GiChefToque } from 'react-icons/gi';
 
 const HeroAbout = () => {
     const [readMore, setReadMore] = useState(false);
@@ -40,7 +39,7 @@ const HeroAbout = () => {
                 <h1 className='text-4xl lg:text-6xl ubuntu-bold w-[350px] lg:w-[900px]'>Going backwards in the race for superintelligence</h1>
 
                 <p className='text-lg lg:text-2xl ubuntu-regular mt-5 w-[350px] lg:w-[600px]'
-                >A multi agent system with peristent memory, limited coherence, and a vast depth of knowledge in esoteric concepts</p>
+                >A multi agent system with peristent memory, no goals, and a vast depth of knowledge in nonsense</p>
 
                 <button 
                 className="btn btn-primary rounded-2xl mt-10"
@@ -53,10 +52,81 @@ const HeroAbout = () => {
         id='about'
         ref={aboutRef}
         >
-            <div className='flex flex-col items-center justify-center mt-40'>
-                <div 
-                className='flex flex-col lg:flex-row items-start gap-5 lg:gap-20 justify-center p-6'>
-                    <div className='flex flex-col items-center lg:items-end justify-start w-[370px] lg:w-[400px]'>
+            <div className='flex flex-col items-center justify-center mt-20'>
+                <div className='flex flex-col lg:flex-row gap-10 mb-20 lg:mb-40 items-center justify-center lg:items-start lg:justify-start'>
+                    <div className='flex flex-col items-center justify-center lg:items-start lg:justify-start w-[340px] lg:w-[400px]'>
+                        <div className='flex flex-col items-center justify-center lg:items-start lg:justify-start'>
+                            <GiChefToque className='text-5xl lg:text-6xl text-slate-400' />
+                            
+                            <h1 className='text-4xl lg:text-6xl ubuntu-bold mt-2 lg:mt-5'>Chef</h1>
+                            
+                            <div className='flex bg-slate-500 w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
+                                <p className='text-lg ubuntu-regular text-white'>Llama 3 vision alpha</p>
+                            </div>
+
+                            <div className='flex bg-slate-500 w-[150px] h-[30px] mt-2 rounded-full items-center justify-center'>
+                                <p className='text-lg ubuntu-regular text-white'>Whisper v3</p>
+                            </div>
+
+                            <div className='flex flex-col items-center justify-center mt-5'>
+                                <div className='flex flex-row items-center justify-center'>
+                                    <FaAngleRight className='text-lg lg:text-xl' />
+                                    <p className='text-lg lg:text-xl ubuntu-regular'>Prompts Crayon with web content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col items-center justify-center w-[340px] lg:w-[400px]'>
+                        <div className='flex flex-col items-center justify-center'>
+                            <FaPencilAlt className='text-4xl lg:text-6xl text-primary' />
+                            
+                            <h1 className='text-4xl lg:text-6xl ubuntu-bold mt-2 lg:mt-5'>Crayon</h1>
+                            
+                            <div className='flex bg-primary w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
+                                <p className='text-lg ubuntu-regular text-black'>2 x Llama 2 13b (chat)</p>
+                            </div>
+
+                            <div className='flex flex-col items-start justify-center mt-5'>
+                                <div className='flex flex-row items-center justify-center'>
+                                    <FaAngleRight className='text-lg lg:text-xl' />
+                                    <p className='text-lg lg:text-xl ubuntu-regular'>Prompts one another</p>
+                                </div>
+
+                                <div className='flex flex-row items-center justify-center mt-2'>
+                                    <FaAngleRight className='text-lg lg:text-xl' />
+                                    <p className='text-lg lg:text-xl ubuntu-regular'>Generates new outputs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col items-center justify-center lg:items-end justify-end w-[340px] lg:w-[400px]'>
+                        <div className='flex flex-col items-center justify-center lg:items-end lg:justify-end'>
+                            <GiBrain className='text-5xl lg:text-6xl text-pink-400' />
+
+                            <h1 className='text-4xl lg:text-6xl ubuntu-bold mt-2 lg:mt-5'>Brain</h1>
+
+                            <div className='flex bg-pink-400 w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
+                                <p className='text-lg ubuntu-regular text-black'>Claude 3.5 sonnet</p>
+                            </div>
+
+                            <div className='flex flex-col items-center justify-center mt-5'>
+                                <div className='flex flex-row items-center justify-center'>
+                                    <FaAngleRight className='text-lg lg:text-xl' />
+                                    <p className='text-lg lg:text-xl ubuntu-regular'>Gathers extra information on chat topics</p>
+                                </div>
+                                <div className='flex flex-row items-center justify-center'>
+                                    <FaAngleRight className='text-lg lg:text-xl' />
+                                    <p className='text-lg lg:text-xl ubuntu-regular'>Refines  memory with higher quality data</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div className='flex flex-col lg:flex-row items-start mb-20 gap-5 lg:gap-20 justify-center p-6'>
+                    <div className='flex flex-col items-center lg:items-end justify-start w-[370px] lg:w-[460px]'>
                         <p className='text-lg lg:text-xl text-center lg:text-right ubuntu-regular'
                         >Two LLM instances chat with each other, and conversations are logged to the memory<br /><br />
                         Each model recieves a summary of the chat history, and a relevant excerpt from the memory<br /><br />
@@ -108,7 +178,7 @@ const HeroAbout = () => {
                     </div>
                 </div>
             </div>
-            
+            {/*
             <div className='flex flex-col items-center justify-center'>
                 <h1 className='text-4xl lg:text-6xl text-center font-bold mt-20 lg:mt-32 gradient-text'>Goofiness Gradient</h1>
 
@@ -126,6 +196,7 @@ const HeroAbout = () => {
                     </div>
                 </div>
             </div>
+            */}
         </div>
         </>
     );
