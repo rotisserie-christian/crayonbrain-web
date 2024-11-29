@@ -126,7 +126,7 @@ const HeroAbout = () => {
                 </div>
                     
                 <div className='flex flex-col lg:flex-row items-start mb-20 gap-5 lg:gap-20 justify-center p-6'>
-                    <div className='flex flex-col items-center lg:items-end justify-start w-[370px] lg:w-[460px]'>
+                    <div className='flex flex-col items-center lg:items-end justify-start w-[370px] lg:w-[400px]'>
                         <p className='text-lg lg:text-xl text-center lg:text-right ubuntu-regular'
                         >Two LLM instances chat with each other, and conversations are logged to the memory<br /><br />
                         Each model recieves a summary of the chat history, and a relevant excerpt from the memory<br /><br />
