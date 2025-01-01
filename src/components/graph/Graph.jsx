@@ -1,89 +1,78 @@
 import ReactFlow, { Background } from 'reactflow';
 import MemoryNode from './MemoryNode';
-import DistillNode from './DistillNode';
-import PruningNode from './Pruning';
-import ChefNode from './ChefNode';
+import TopBottomNode from './TopBottomNode';
 import 'reactflow/dist/style.css';
 import './CustomNode.css'
+import ExtractNode from './ExtractNode';
+import ReviewNode from './ReviewNode';
 
 const nodeTypes = {
     memoryNode: MemoryNode,
-    distillNode: DistillNode,
-    pruningNode: PruningNode,
-    chefNode: ChefNode,
+    extractNode: ExtractNode,
+    topBottomNode: TopBottomNode,
+    reviewNode: ReviewNode
 };
 
 const initialNodes = [
     {
-        id: 'Chef',
-        position: { x: 0, y: 200 },
-        data: { label: 'Chef' },
+        id: 'Ideate',
+        position: { x: 125, y: 190 },
+        data: { label: '🖍️ Ideate' },
         draggable: false,
-        type: 'chefNode'
+        type: 'topBottomNode'
     },
     {
-        id: 'Crayon',
-        position: { x: 140, y: 50 },
-        data: { label: 'Crayon' },
+        id: 'Review',
+        position: { x: 125, y: 110 },
+        data: { label: '👤 Review' },
         draggable: false,
-        className: 'darkNodeStyle'
+        type: 'reviewNode'
     },
     {
         id: 'Memory',
-        position: { x: 270, y: 200 },
-        data: { label: 'Memory' },
+        position: { x: 125, y: 10 },
+        data: { label: '📂 Memory' },
         draggable: false,
-        type: 'memoryNode'
+        type: "memoryNode"
     },
     {
-        id: 'Distill',
-        position: { x: 140, y: 200 },
-        data: { label: 'Distill' },
+        id: 'Extract',
+        position: { x: 125, y: 300 },
+        data: { label: '🧠 Extract' },
         draggable: false,
-        type: 'distillNode'
+        type: 'extractNode'
     },
     {
-        id: 'Pruning',
-        position: { x: 270, y: 350 },
-        data: { label: 'Pruning' },
+        id: 'Write',
+        position: { x: 0, y: 150 },
+        data: { label: '🧠 Write' },
         draggable: false,
-        type: 'pruningNode'
+        type: "topBottomNode"
     },
     {
-        id: 'Crayon2',
-        position: { x: 140, y: 350 },
-        data: { label: 'Crayon' },
+        id: 'Code',
+        position: { x: 250, y: 150 },
+        data: { label: '🧠 Code' },
         draggable: false,
-        className: 'darkNodeStyle'
-    },
-    {
-        id: 'Brain',
-        position: { x: 270, y: 50 },
-        data: { label: 'Brain' },
-        draggable: false,
-        type: 'brainNode',
-        className: 'darkNodeStyle'
+        type: 'topBottomNode',
     }
 ];
 
 const initialEdges = [
-    { id: 'e1', source: 'Crayon', target: 'Distill', targetHandle: 'top', animated: true },
-    { id: 'e2', source: 'Crayon', target: 'Memory', targetHandle: 'top', animated: true },
-    { id: 'e3', source: 'Distill', sourceHandle: 'right', target: 'Memory', targetHandle: 'left', animated: true },
-    { id: 'e4', source: 'Memory', sourceHandle: 'bottom', target: 'Pruning', targetHandle: 'top', animated: true },
-    { id: 'e5', source: 'Memory', sourceHandle: 'bottom', target: 'Crayon2', animated: true },
-    { id: 'e6', source: 'Distill', sourceHandle: 'bottom', target: 'Crayon2', targetHandle: 'top', animated: true },
-    { id: 'e7', source: 'Crayon', target: 'Chef', targetHandle: 'top', animated: true },
-    { id: 'e8', source: 'Chef', sourceHandle: 'bottom', target: 'Crayon2', animated: true },
-    { id: 'e9', source: 'Chef', sourceHandle: 'right', target: 'Distill', targetHandle: 'left', animated: true },
-    { id: 'e10', source: 'Brain', sourceHandle: 'bottom', target: 'Memory', targetHandle: 'top', animated: true },
+    { id: 'e1', source: 'Ideate', sourceHandle: 'top', target: 'Review', targetHandle: 'bottom', animated: true},
+    { id: 'e2', source: 'Ideate', sourceHandle: 'bottom', target: 'Extract', targetHandle: 'top', animated: true },
+    { id: 'e3', source: 'Code', sourceHandle: 'bottom', target: 'Extract', targetHandle: 'top', animated: true },
+    { id: 'e4', source: 'Write', sourceHandle: 'bottom', target: 'Extract', targetHandle: 'top', animated: true },
+    { id: 'e5', source: 'Code', sourceHandle: 'top', target: 'Memory', targetHandle: 'bottom', animated: true },
+    { id: 'e6', source: 'Write', target: 'Memory', targetHandle: 'bottom', animated: true },
+    { id: 'e7', source: 'Review', target: 'Memory', targetHandle: 'bottom', animated: true}
 ];
 
 const defaultViewport = { x: 0, y: 0, zoom: 1 };
 
 const Graph = () => {
     return (
-        <div style={{ height: '450px', width: '370px', pointerEvents: 'none' }}>   
+        <div style={{ height: '350px', width: '350px', pointerEvents: 'none' }}>   
             <ReactFlow 
                 nodes={initialNodes} 
                 edges={initialEdges}

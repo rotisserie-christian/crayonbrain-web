@@ -1,14 +1,13 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { ShootingStars } from './ui/ShootingStars';
 import { StarsBackground } from './ui/StarsBackground';
 import Graph from './graph/Graph';
-import { FaAngleDoubleRight, FaAngleDoubleUp, FaAngleRight, FaPencilAlt } from 'react-icons/fa';
-import { GiBrain, GiChefToque } from 'react-icons/gi';
+import { FaPencilAlt, FaFolderOpen } from 'react-icons/fa';
+import brain from '../assets/brain.jpg';
+import { GiBrain } from 'react-icons/gi';
+import { IoPerson } from "react-icons/io5";
 
 const HeroAbout = () => {
-    const [readMore, setReadMore] = useState(false);
-    const [readMore2, setReadMore2] = useState(false);
-
     const handleGo2About = () => {
         aboutRef.current.scrollIntoView({ behavior: 'smooth' });
       };
@@ -36,10 +35,12 @@ const HeroAbout = () => {
             />
             
             <div className='flex flex-col bg-opacity-90 items-center justify-center text-center relative z-10'>
-                <h1 className='text-4xl lg:text-6xl ubuntu-bold w-[350px] lg:w-[900px]'>Going backwards in the race for superintelligence</h1>
+                <img src={brain} className='rounded-2xl mb-2 w-[100px] lg:w-[150px] shadow-md' />
+                
+                <h1 className='text-4xl lg:text-6xl ubuntu-bold w-[350px] lg:w-[900px]'>Crayonbrain</h1>
 
                 <p className='text-lg lg:text-2xl ubuntu-regular mt-5 w-[350px] lg:w-[600px]'
-                >A multi agent system with peristent memory, no goals, and a vast depth of knowledge in nonsense</p>
+                >A multi agent system that draws outside the lines</p>
 
                 <button 
                 className="btn btn-primary rounded-2xl mt-10"
@@ -48,155 +49,90 @@ const HeroAbout = () => {
         </div>
 
         <div 
-        className="flex flex-col w-full bg-base-200"
+        className="flex flex-col w-full min-h-screen bg-base-200"
         id='about'
         ref={aboutRef}
         >
             <div className='flex flex-col items-center justify-center mt-20'>
-                <div className='flex flex-col lg:flex-row gap-10 mb-20 lg:mb-40 items-center justify-center lg:items-start lg:justify-start'>
-                    <div className='flex flex-col items-center justify-center lg:items-start lg:justify-start w-[340px] lg:w-[400px]'>
-                        <div className='flex flex-col items-center justify-center lg:items-start lg:justify-start'>
-                            <GiChefToque className='text-5xl lg:text-6xl text-slate-400' />
-                            
-                            <h1 className='text-4xl lg:text-6xl ubuntu-bold mt-2 lg:mt-5'>Chef</h1>
-                            
-                            <div className='flex bg-slate-500 w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
-                                <p className='text-lg ubuntu-regular text-white'>Llama 3 vision alpha</p>
-                            </div>
-
-                            <div className='flex bg-slate-500 w-[150px] h-[30px] mt-2 rounded-full items-center justify-center'>
-                                <p className='text-lg ubuntu-regular text-white'>Whisper v3</p>
-                            </div>
-
-                            <div className='flex flex-col items-center justify-center mt-5'>
-                                <div className='flex flex-row items-center justify-center'>
-                                    <FaAngleRight className='text-lg lg:text-xl' />
-                                    <p className='text-lg lg:text-xl ubuntu-regular'>Prompts Crayon with web content</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col items-center justify-center w-[340px] lg:w-[400px]'>
-                        <div className='flex flex-col items-center justify-center'>
-                            <FaPencilAlt className='text-4xl lg:text-6xl text-primary' />
-                            
-                            <h1 className='text-4xl lg:text-6xl ubuntu-bold mt-2 lg:mt-5'>Crayon</h1>
-                            
-                            <div className='flex bg-primary w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
-                                <p className='text-lg ubuntu-regular text-black'>2 x Llama 2 13b (chat)</p>
-                            </div>
-
-                            <div className='flex flex-col items-start justify-center mt-5'>
-                                <div className='flex flex-row items-center justify-center'>
-                                    <FaAngleRight className='text-lg lg:text-xl' />
-                                    <p className='text-lg lg:text-xl ubuntu-regular'>Prompts one another</p>
-                                </div>
-
-                                <div className='flex flex-row items-center justify-center mt-2'>
-                                    <FaAngleRight className='text-lg lg:text-xl' />
-                                    <p className='text-lg lg:text-xl ubuntu-regular'>Generates new outputs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col items-center justify-center lg:items-end justify-end w-[340px] lg:w-[400px]'>
+                <div className='flex flex-col lg:flex-row mb-20 gap-20 lg:gap-32 items-center justify-center'>
+                    <div className='flex flex-col gap-20 items-center justify-center lg:items-end lg:justify-end'>
                         <div className='flex flex-col items-center justify-center lg:items-end lg:justify-end'>
-                            <GiBrain className='text-5xl lg:text-6xl text-pink-400' />
+                            <div className='flex flex-col items-center justify-center lg:items-end lg:justify-end'>
+                                <FaPencilAlt className='text-4xl text-red-400' />
+                                
+                                <h1 className='text-4xl ubuntu-bold mt-2'
+                                >Crayon</h1>
+                                
+                                <div className='flex bg-red-400 w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
+                                    <p className='text-lg ubuntu-regular text-black'
+                                    >GPT-J-6b fine tune</p>
+                                </div>
 
-                            <h1 className='text-4xl lg:text-6xl ubuntu-bold mt-2 lg:mt-5'>Brain</h1>
-
-                            <div className='flex bg-pink-400 w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
-                                <p className='text-lg ubuntu-regular text-black'>Claude 3.5 sonnet</p>
+                                <p className='text-lg text-center w-96 lg:text-right mt-5 ubuntu-regular'
+                                >Generates creative outputs and brainstorms new ideas</p>
                             </div>
+                        </div>
 
-                            <div className='flex flex-col items-center justify-center mt-5'>
-                                <div className='flex flex-row items-center justify-center'>
-                                    <FaAngleRight className='text-lg lg:text-xl' />
-                                    <p className='text-lg lg:text-xl ubuntu-regular'>Gathers extra information on chat topics</p>
+                        <div className='flex flex-col items-center justify-center lg:items-end lg:justify-end'>
+                            <div className='flex flex-col items-center justify-center lg:items-end lg:justify-end'>
+                                <GiBrain className='text-5xl text-pink-400' />
+
+                                <h1 className='text-4xl ubuntu-bold mt-2'
+                                >Brain</h1>
+
+                                <div className='flex bg-pink-400 w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
+                                    <p className='text-lg ubuntu-regular text-black'
+                                    >Claude 3.5 sonnet</p>
                                 </div>
-                                <div className='flex flex-row items-center justify-center'>
-                                    <FaAngleRight className='text-lg lg:text-xl' />
-                                    <p className='text-lg lg:text-xl ubuntu-regular'>Refines  memory with higher quality data</p>
-                                </div>
+
+                                <p className='text-lg text-center w-96 lg:text-right mt-5 ubuntu-regular'
+                                >Extracts useable ideas from Crayon and delegates to appropriate workflows</p>
                             </div>
                         </div>
                     </div>
-                </div>
                     
-                <div className='flex flex-col lg:flex-row items-start mb-20 gap-5 lg:gap-20 justify-center p-6'>
-                    <div className='flex flex-col items-center lg:items-end justify-start w-[370px] lg:w-[400px]'>
-                        <p className='text-lg lg:text-xl text-center lg:text-right ubuntu-regular'
-                        >Two LLM instances chat with each other, and conversations are logged to the memory<br /><br />
-                        Each model recieves a summary of the chat history, and a relevant excerpt from the memory<br /><br />
-                        </p>
 
-                        <button 
-                        className='btn btn-sm btn-outline rounded-full'
-                        onClick={() => setReadMore(!readMore)}
-                        >
-                            Read more 
-                            {readMore ? <FaAngleDoubleUp /> : <FaAngleDoubleRight />}
-                        </button>
-
-                        {readMore && (
-                            <p className='text-lg lg:text-xl text-center lg:text-right ubuntu-regular mt-5'
-                            >
-                            When the chat starts, the HDBSCAN algorithm clusters the chat history and caches the embeddings<br /><br />
-                            Model outputs are matched with the closest embeddings using cosine similarity<br /><br />
-                            The result is distilled using BART to fit the context window<br /><br />
-                            </p>
-                        )}
-                    </div>
-
-                    <div className='w-[370px] lg:w-[400px]'>
+                    <div className='flex items-center justify-center w-[370px] lg:w-[400px]'>
                         <Graph />
                     </div>
 
-                    <div className='flex flex-col items-center lg:items-start justify-start w-[370px] lg:w-[400px]'>
-                        <p className='text-lg lg:text-xl text-center lg:text-left ubuntu-regular'
-                        >The output from each model prompts the other<br /><br />
-                        Over time, unused memories get deleted<br /><br />
-                        </p>
+                    <div className='flex flex-col gap-20 items-center justify-center lg:items-start lg:justify-start'>
+                        <div className='flex flex-col items-center justify-center lg:items-start lg:justify-start'>
+                            <div className='flex flex-col items-center justify-center lg:items-start lg:justify-start'>
+                                <IoPerson className='text-4xl text-primary' />
+                                
+                                <h1 className='text-4xl ubuntu-bold mt-2'
+                                >Human</h1>
+                                
+                                <div className='flex bg-primary w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
+                                    <p className='text-lg ubuntu-regular text-black'
+                                    >Carbon-based life form</p>
+                                </div>
 
-                        <button 
-                        className='btn btn-sm btn-outline rounded-full'
-                        onClick={() => setReadMore2(!readMore2)}
-                        >
-                            Read more 
-                            {readMore2 ? <FaAngleDoubleUp /> : <FaAngleDoubleRight />}
-                        </button>
+                                <p className='text-lg text-center w-96 lg:text-left mt-5 ubuntu-regular'
+                                >Reviews outputs and recalibrates the workflow</p>
+                            </div>
+                        </div>
 
-                        {readMore2 && (
-                            <p className='text-lg lg:text-xl text-center lg:text-left ubuntu-regular mt-5'
-                            >The memory bank is refined using a method derived from synaptic pruning and neuroplasticity<br /><br />
-                            Human memories will fade over time if they are not used<br /><br />
-                            This is replicated by periodically removing entries with the highest Euclidian distance to the memory clusters<br /><br />
-                            </p>
-                        )}
+                        <div className='flex flex-col items-center justify-center lg:items-start lg:justify-start'>
+                            <div className='flex flex-col items-center justify-center lg:items-start lg:justify-start'>
+                                <FaFolderOpen className='text-5xl text-orange-400' />
+
+                                <h1 className='text-4xl ubuntu-bold mt-2'
+                                >Memory</h1>
+
+                                <div className='flex bg-orange-400 w-[220px] h-[30px] mt-5 rounded-full items-center justify-center'>
+                                    <p className='text-lg ubuntu-regular text-black'
+                                    >Cosine similarity search</p>
+                                </div>
+
+                                <p className='text-lg text-center w-96 lg:text-left mt-5 ubuntu-regular'
+                                >Retrieves relevant context for new inputs</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            {/*
-            <div className='flex flex-col items-center justify-center'>
-                <h1 className='text-4xl lg:text-6xl text-center font-bold mt-20 lg:mt-32 gradient-text'>Goofiness Gradient</h1>
-
-                <p className='text-lg lg:text-2xl text-center ubuntu-regular mt-5 w-[350px] lg:w-[600px]'
-                >
-                They sometimes build on each other&apos;s bizarre ideas and frequently argue, often times in creatively passive aggressive ways
-                </p>
-                
-                <div className='flex flex-col lg:flex-row gap-10 lg:gap-40 items-center justify-center mt-10 lg:mt-20 mb-40'>
-                    <div> 
-                        <Chat2 />          
-                    </div>
-                    <div> 
-                        <Chat />
-                    </div>
-                </div>
-            </div>
-            */}
         </div>
         </>
     );

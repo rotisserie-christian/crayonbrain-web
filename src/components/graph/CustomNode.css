@@ -3,7 +3,7 @@
     color: rgb(235, 235, 235);
     border-radius: 16px;
     padding: 12px;
-    width: 90px;
+    width: 100px;
     text-align: center;
     font-size: 14px; 
 }
@@ -15,7 +15,7 @@
     padding: 12px;
     font-size: 14px;
     border: none;
-    width: 90px;
+    width: 100px;
 }
 
 .handle {

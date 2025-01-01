@@ -5,21 +5,9 @@ import './CustomNode.css';
 const MemoryNode = ({ data }) => {
     return (
         <div className="darkNodeStyle">
-            <Handle
-                type="target"
-                position="top"
-                className="handle handle-top"
-                id="top"
-            />
             <div>{data.label}</div>
             <Handle
                 type="target"
-                position="left"
-                className="handle handle-left"
-                id="left"
-            />
-            <Handle
-                type="source"
                 position="bottom"
                 className="handle"
                 id="bottom"
