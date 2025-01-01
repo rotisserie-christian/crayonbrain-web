@@ -16,14 +16,14 @@ const nodeTypes = {
 const initialNodes = [
     {
         id: 'Ideate',
-        position: { x: 125, y: 190 },
+        position: { x: 125, y: 195 },
         data: { label: '🖍️ Ideate' },
         draggable: false,
         type: 'topBottomNode'
     },
     {
         id: 'Review',
-        position: { x: 125, y: 110 },
+        position: { x: 125, y: 105 },
         data: { label: '👤 Review' },
         draggable: false,
         type: 'reviewNode'
@@ -51,7 +51,7 @@ const initialNodes = [
     },
     {
         id: 'Code',
-        position: { x: 250, y: 150 },
+        position: { x: 240, y: 150 },
         data: { label: '🧠 Code' },
         draggable: false,
         type: 'topBottomNode',
