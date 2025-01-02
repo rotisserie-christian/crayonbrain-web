@@ -2,10 +2,11 @@ import { useRef } from 'react';
 import { ShootingStars } from './ui/ShootingStars';
 import { StarsBackground } from './ui/StarsBackground';
 import Graph from './graph/Graph';
-import { FaPencilAlt, FaFolderOpen } from 'react-icons/fa';
+import { FaPencilAlt, FaFolderOpen, FaAngleDoubleRight } from 'react-icons/fa';
 import brain from '../assets/brain.jpg';
 import { GiBrain } from 'react-icons/gi';
 import { IoPerson } from "react-icons/io5";
+import Histogram from "./Histogram";
 
 const HeroAbout = () => {
     const handleGo2About = () => {
@@ -49,12 +50,41 @@ const HeroAbout = () => {
         </div>
 
         <div 
-        className="flex flex-col w-full min-h-screen bg-base-200"
+        className="flex flex-col w-full bg-base-200"
         id='about'
         ref={aboutRef}
         >
             <div className='flex flex-col items-center justify-center mt-20'>
-                <div className='flex flex-col lg:flex-row mb-20 gap-20 lg:gap-32 items-center justify-center'>
+                <h1 className='text-4xl lg:text-6xl ubuntu-bold mb-2 lg:mb-5'
+                >Current Projects</h1>
+
+                <p className='text-lg lg:text-2xl ubuntu-regular mb-10'
+                >Here's what crayonbrain is working on</p>
+                
+                <div className='flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-20'>
+                    <div className='flex items-center justify-between bg-base-300 rounded-2xl p-3 w-[330px]'>
+                        <div className='flex flex-col ml-5 w-full'>
+                            <div className='flex flex-row items-start justify-between'>
+                                <p className='text-2xl ubuntu-regular'
+                                >School of Toast</p>
+
+                                <button className='btn btn-sm btn-neutral rounded-xl'
+                                >View <FaAngleDoubleRight /></button>
+                            </div>
+
+                            <p className='text-base ubuntu-regular mt-2'
+                            >Learning resource for making toast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 className='text-4xl lg:text-6xl ubuntu-bold mb-2 lg:mb-5 mt-40'
+                >How it Works</h1>
+
+                <p className='text-lg lg:text-2xl ubuntu-regular mb-10 w-80 lg:w-96 text-center'
+                >An overview of how crayonbrain attempts to build things</p>
+
+                <div className='flex flex-col lg:flex-row mt-10 mb-40 gap-20 lg:gap-32 items-center justify-center'>
                     <div className='flex flex-col gap-20 items-center justify-center lg:items-end lg:justify-end'>
                         <div className='flex flex-col items-center justify-center lg:items-end lg:justify-end'>
                             <div className='flex flex-col items-center justify-center lg:items-end lg:justify-end'>
@@ -131,6 +161,16 @@ const HeroAbout = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className='flex flex-col items-center justify-center mb-20 w-full'>
+                    <h1 className='text-4xl lg:text-6xl ubuntu-bold mb-2 lg:mb-5'
+                    >Anatomy of Crayon</h1>
+
+                    <p className='text-lg lg:text-2xl ubuntu-regular mb-5'
+                    >LoRA trained on these pairs</p>
+                    
+                    <Histogram />
                 </div>
             </div>
         </div>
