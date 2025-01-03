@@ -45,7 +45,7 @@ const initialNodes = [
     {
         id: 'Write',
         position: { x: 0, y: 150 },
-        data: { label: '🧠 Write' },
+        data: { label: '🖍️ Write' },
         draggable: false,
         type: "topBottomNode"
     },

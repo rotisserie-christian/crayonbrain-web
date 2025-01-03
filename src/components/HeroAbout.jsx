@@ -59,7 +59,7 @@ const HeroAbout = () => {
                 >Current Projects</h1>
 
                 <p className='text-lg lg:text-2xl ubuntu-regular mb-10'
-                >Here's what crayonbrain is working on</p>
+                >Here&apos;s what crayonbrain is working on</p>
                 
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-20'>
                     <div className='flex items-center justify-between bg-base-300 rounded-2xl p-3 w-[330px]'>

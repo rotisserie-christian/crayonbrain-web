@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
+import PropTypes from 'prop-types';
 
 // Linear interpolation
 function interpolate(start,end,steps) {
@@ -76,17 +77,25 @@ export default function Histogram() {
   const maxValue = Math.max(...interpolatedData.map(d => d.value));
   
   const ProgressBar = ({ value, maxValue, color, isLeft }) => {
-  const widthPercentage = (value / maxValue) * 100;
+    const widthPercentage = (value / maxValue) * 100;
 
-  return (
-    <div className={`h-1 w-full ${isLeft ? 'flex justify-end' : ''}`}>
-      <div
-        className={`h-full ${isLeft ? 'rounded-l-full' : 'rounded-r-full'}`}
-        style={{ width: `${widthPercentage}%`, backgroundColor: color }}
-      ></div>
-    </div>
-  );
-};
+    return (
+      <div className={`h-1 w-full ${isLeft ? 'flex justify-end' : ''}`}>
+        <div
+          className={`h-full ${isLeft ? 'rounded-l-full' : 'rounded-r-full'}`}
+          style={{ width: `${widthPercentage}%`, backgroundColor: color }}
+        ></div>
+      </div>
+    );
+  };
+
+  // Add PropTypes validation
+  ProgressBar.propTypes = {
+    value: PropTypes.number.isRequired,
+    maxValue: PropTypes.number.isRequired,
+    color: PropTypes.string.isRequired,
+    isLeft: PropTypes.bool.isRequired
+  };
 
   return (
     <>
