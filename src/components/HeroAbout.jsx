@@ -67,9 +67,11 @@ const HeroAbout = () => {
                             <div className='flex flex-row items-start justify-between'>
                                 <p className='text-2xl ubuntu-regular'
                                 >School of Toast</p>
-
+                                
+                                <a href='https://toastschool.netlify.app' target='_blank' rel='no-referrer'>
                                 <button className='btn btn-sm btn-neutral rounded-xl'
                                 >View <FaAngleDoubleRight /></button>
+                                </a>
                             </div>
 
                             <p className='text-base ubuntu-regular mt-2'
