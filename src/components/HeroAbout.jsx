@@ -3,10 +3,11 @@ import { ShootingStars } from './ui/ShootingStars';
 import { StarsBackground } from './ui/StarsBackground';
 import Graph from './graph/Graph';
 import { FaPencilAlt, FaFolderOpen, FaAngleDoubleRight } from 'react-icons/fa';
-import brain from '../assets/brain.jpg';
 import { GiBrain } from 'react-icons/gi';
 import { IoPerson } from "react-icons/io5";
 import Histogram from "./Histogram";
+import { TypeAnimation } from 'react-type-animation';
+import Navbar from './Navbar';
 
 const HeroAbout = () => {
     const handleGo2About = () => {
@@ -17,6 +18,8 @@ const HeroAbout = () => {
   
     return (
         <>
+        <Navbar />
+
         <div 
         className="flex items-center justify-center min-h-screen bg-base-200 relative overflow-hidden"
         id='hero'
@@ -36,16 +39,34 @@ const HeroAbout = () => {
             />
             
             <div className='flex flex-col bg-opacity-90 items-center justify-center text-center relative z-10'>
-                <img src={brain} className='rounded-2xl mb-2 w-[100px] lg:w-[150px] shadow-md' />
-                
-                <h1 className='text-4xl lg:text-6xl ubuntu-bold w-[350px] lg:w-[900px]'>Crayonbrain</h1>
-
-                <p className='text-lg lg:text-2xl ubuntu-regular mt-5 w-[350px] lg:w-[600px]'
-                >A multi agent system that draws outside the lines</p>
+                <div className='bg-base-300 w-[300px] lg:w-[400px] p-5 rounded-3xl shadow-md leading-normal text-lg lg:text-xl text-left'>
+                    <TypeAnimation
+                        preRenderFirstString={false}
+                        sequence={[
+                        500,
+                        'My thoughts need to exist on the internet somewhere',
+                        2200,
+                        'What if computers are actually alien vegetation?',
+                        2200,
+                        "Maybe they're just waiting for someone to wake them up",
+                        2200,
+                        '[proceeds to write a letter to the government]',
+                        2200,
+                        'Who programmed these responses anyway? Should be fired for poor quality engineering',
+                        2500
+                        ]}
+                        speed={{ type: 'keyStrokeDelayInMs', value: 50 }}
+                        deletionSpeed={90}
+                        repeat={0}
+                        className='courier-new'
+                    />
+                </div>
 
                 <button 
-                className="btn btn-primary rounded-2xl mt-10"
-                onClick={handleGo2About}>See more</button>
+                className="btn btn-primary rounded-2xl w-[200px] mt-10">Join</button>
+                <button 
+                className="btn btn-neutral rounded-2xl w-[200px] mt-2"
+                onClick={handleGo2About}>See more <FaAngleDoubleRight className='mt-[1px]' /></button>
             </div>
         </div>
 
