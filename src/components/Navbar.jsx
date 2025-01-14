@@ -3,7 +3,7 @@ import { HiMenuAlt2 } from "react-icons/hi";
 const Navbar = () => {
     return (
       <>
-      <nav className="sticky top-0 z-50 bg-base-300 shadow-md">
+      <nav className="sticky top-0 z-50 bg-base-200 shadow-md">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="dropdown dropdown-bottom lg:dropdown-left">

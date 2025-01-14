@@ -25,7 +25,7 @@ const HeroAbout = () => {
         <Navbar />
 
         <div 
-        className="flex items-center justify-center min-h-screen bg-base-200 relative overflow-hidden"
+        className="flex items-center justify-center h-screen bg-base-200 relative overflow-hidden"
         id='hero'
         >
             <StarsBackground 
@@ -42,7 +42,7 @@ const HeroAbout = () => {
                 maxSpeed={30}
             />
             
-            <div className='flex flex-col bg-opacity-90 items-center justify-start text-center relative z-10'>
+            <div className='flex flex-col mb-20 bg-opacity-90 items-center justify-start text-center relative z-10'>
                 <div className='h-[300px] flex items-center justify-center'>
                     <div className={`transition-all duration-1000 ease-in-out overflow-hidden ${
                         showVideo || isLoading
