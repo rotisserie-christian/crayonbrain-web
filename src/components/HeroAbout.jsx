@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { ShootingStars } from './ui/ShootingStars';
 import { StarsBackground } from './ui/StarsBackground';
 import Graph from './graph/Graph';
@@ -7,6 +7,7 @@ import { GiBrain } from 'react-icons/gi';
 import { IoPerson } from "react-icons/io5";
 import Histogram from "./Histogram";
 import { TypeAnimation } from 'react-type-animation';
+import Alienveg from '../assets/alienveg.webm';
 import Navbar from './Navbar';
 
 const HeroAbout = () => {
@@ -15,7 +16,10 @@ const HeroAbout = () => {
       };
 
       const aboutRef = useRef(null);
-  
+
+      const [showVideo, setShowVideo] = useState(false);
+      const [isLoading, setIsLoading] = useState(false);
+
     return (
         <>
         <Navbar />
@@ -38,19 +42,62 @@ const HeroAbout = () => {
                 maxSpeed={30}
             />
             
-            <div className='flex flex-col bg-opacity-90 items-center justify-center text-center relative z-10'>
-                <div className='bg-base-300 w-[300px] lg:w-[400px] p-5 rounded-3xl shadow-md leading-normal text-lg lg:text-xl text-left'>
+            <div className='flex flex-col bg-opacity-90 items-center justify-start text-center relative z-10'>
+                <div className='h-[300px] flex items-center justify-center'>
+                    <div className={`transition-all duration-1000 ease-in-out overflow-hidden ${
+                        showVideo || isLoading
+                            ? 'opacity-100 scale-100 h-auto' 
+                            : 'opacity-0 scale-95 h-0'
+                    }`}>
+                        {(showVideo || isLoading) && (
+                            <div className='bg-base-300 p-5 shadow-md rounded-3xl'>
+                                <div className='flex items-center justify-center'>
+                                    {isLoading ? (
+                                        <span className="loading loading-spinner text-primary"></span>
+                                    ) : (
+                                        <video 
+                                            id='alienveg' 
+                                            className='w-[200px] rounded-3xl shadow-md' 
+                                            src={Alienveg} 
+                                            loop 
+                                            muted 
+                                            playsInline 
+                                        />
+                                    )}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+                
+                <div className='bg-base-300 w-[340px] lg:w-[500px] p-5 rounded-3xl shadow-md leading-normal text-lg lg:text-3xl text-left'>
                     <TypeAnimation
                         preRenderFirstString={false}
                         sequence={[
                         500,
-                        'My thoughts need to exist on the internet somewhere',
-                        2200,
                         'What if computers are actually alien vegetation?',
-                        2200,
+                        550,
+                        () => {setIsLoading(true);},
+                        550,
+                        () => {
+                            setTimeout(() => {
+                                setIsLoading(false);
+                                setShowVideo(true);
+                                setTimeout(() => {
+                                    const video = document.getElementById('alienveg');
+                                    if (video) video.play();
+                                }, 100);
+                            }, 1100);
+                        },
+                        1100,
                         "Maybe they're just waiting for someone to wake them up",
                         2200,
                         '[proceeds to write a letter to the government]',
+                        () => {
+                            const video = document.getElementById('alienveg');
+                            if (video) video.pause();
+                            setShowVideo(false);
+                        },
                         2200,
                         'Who programmed these responses anyway? Should be fired for poor quality engineering',
                         2500
