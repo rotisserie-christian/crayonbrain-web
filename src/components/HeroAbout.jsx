@@ -7,7 +7,7 @@ import { GiBrain } from 'react-icons/gi';
 import { IoPerson } from "react-icons/io5";
 import Histogram from "./Histogram";
 import { TypeAnimation } from 'react-type-animation';
-import Alienveg from '../assets/alienveg.webm';
+import Computeralien from '../assets/computeralien.webm';
 import Navbar from './Navbar';
 
 const HeroAbout = () => {
@@ -24,7 +24,7 @@ const HeroAbout = () => {
       // Preload video when component mounts
       useEffect(() => {
           const video = document.createElement('video');
-          video.src = Alienveg;
+          video.src = Computeralien;
           video.load();
           videoRef.current = video;
       }, []);
@@ -52,7 +52,7 @@ const HeroAbout = () => {
             />
             
             <div className='flex flex-col mb-40 bg-opacity-90 items-center justify-start text-center relative z-10'>
-                <div className='h-[250px] flex items-center justify-center'>
+                <div className='h-[180px] flex items-center justify-center mb-10'>
                     <div className={`transition-all duration-1000 ease-in-out overflow-hidden ${
                         showVideo || isLoading
                             ? 'opacity-100 scale-100 h-auto' 
@@ -68,7 +68,7 @@ const HeroAbout = () => {
                                             id='alienveg' 
                                             ref={videoRef}
                                             className='w-[150px] rounded-3xl shadow-md' 
-                                            src={Alienveg} 
+                                            src={Computeralien} 
                                             loop 
                                             muted 
                                             playsInline 
@@ -103,12 +103,13 @@ const HeroAbout = () => {
                         "Maybe they're just waiting for someone to wake them up",
                         2200,
                         '[proceeds to write a letter to the government]',
+                        1700,
                         () => {
                             const video = document.getElementById('alienveg');
                             if (video) video.pause();
                             setShowVideo(false);
                         },
-                        2200,
+                        500,
                         'Who programmed these responses anyway? Should be fired for poor quality engineering',
                         2500
                         ]}
