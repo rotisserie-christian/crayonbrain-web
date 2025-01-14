@@ -80,7 +80,7 @@ const HeroAbout = () => {
                     </div>
                 </div>
                 
-                <div className='bg-base-300 w-[340px] lg:w-[500px] p-5 rounded-3xl shadow-md leading-normal text-lg lg:text-3xl text-left'>
+                <div className='bg-base-300 w-[320px] lg:w-[500px] p-5 rounded-3xl shadow-md leading-normal text-base lg:text-3xl text-left'>
                     <TypeAnimation
                         preRenderFirstString={false}
                         sequence={[
