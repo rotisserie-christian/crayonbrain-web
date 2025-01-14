@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { ShootingStars } from './ui/ShootingStars';
 import { StarsBackground } from './ui/StarsBackground';
 import Graph from './graph/Graph';
@@ -19,6 +19,15 @@ const HeroAbout = () => {
 
       const [showVideo, setShowVideo] = useState(false);
       const [isLoading, setIsLoading] = useState(false);
+      const videoRef = useRef(null);
+
+      // Preload video when component mounts
+      useEffect(() => {
+          const video = document.createElement('video');
+          video.src = Alienveg;
+          video.load();
+          videoRef.current = video;
+      }, []);
 
     return (
         <>
@@ -42,8 +51,8 @@ const HeroAbout = () => {
                 maxSpeed={30}
             />
             
-            <div className='flex flex-col mb-20 bg-opacity-90 items-center justify-start text-center relative z-10'>
-                <div className='h-[300px] flex items-center justify-center'>
+            <div className='flex flex-col mb-24 bg-opacity-90 items-center justify-start text-center relative z-10'>
+                <div className='h-[250px] flex items-center justify-center'>
                     <div className={`transition-all duration-1000 ease-in-out overflow-hidden ${
                         showVideo || isLoading
                             ? 'opacity-100 scale-100 h-auto' 
@@ -57,7 +66,8 @@ const HeroAbout = () => {
                                     ) : (
                                         <video 
                                             id='alienveg' 
-                                            className='w-[200px] rounded-3xl shadow-md' 
+                                            ref={videoRef}
+                                            className='w-[150px] rounded-3xl shadow-md' 
                                             src={Alienveg} 
                                             loop 
                                             muted 
@@ -110,9 +120,9 @@ const HeroAbout = () => {
                 </div>
 
                 <button 
-                className="btn btn-primary rounded-2xl w-[200px] mt-10">Join</button>
+                className="btn btn-primary rounded-2xl w-[150px] mt-10">Join</button>
                 <button 
-                className="btn btn-neutral rounded-2xl w-[200px] mt-2"
+                className="btn btn-neutral rounded-2xl w-[150px] mt-2"
                 onClick={handleGo2About}>See more <FaAngleDoubleRight className='mt-[1px]' /></button>
             </div>
         </div>
