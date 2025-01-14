@@ -51,7 +51,7 @@ const HeroAbout = () => {
                 maxSpeed={30}
             />
             
-            <div className='flex flex-col mb-24 bg-opacity-90 items-center justify-start text-center relative z-10'>
+            <div className='flex flex-col mb-40 bg-opacity-90 items-center justify-start text-center relative z-10'>
                 <div className='h-[250px] flex items-center justify-center'>
                     <div className={`transition-all duration-1000 ease-in-out overflow-hidden ${
                         showVideo || isLoading
